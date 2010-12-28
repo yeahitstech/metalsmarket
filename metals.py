@@ -4,6 +4,7 @@ import tweepy
 import httplib
 import string
 import time
+from metals_info import *
 
 results = []
 
@@ -59,11 +60,6 @@ def PullWorldMetalPrices():
     results.append('For more visit: http://www.kitco.com/market/')
 
 def MakePost():
-    CONSUMER_KEY = 'czQmrlJVkjKORwGK7pA1Qg'
-    CONSUMER_SECRET = 'NeHysTOXfjyRHfnkjOl0RjziF6tRDZOJdQ2linsXWBI'
-    ACCESS_KEY = '231007626-523hFRaKWFBtU7vKtSbA5JY9Z6u4bFqwvsgEtWOr'
-    ACCESS_SECRET = 'nUneSAAcF48b9rCmPUFAIrsDNfjdpTxIRsdIe3Tcg'
-
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     api = tweepy.API(auth)
