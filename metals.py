@@ -20,12 +20,12 @@ def PullNYMetalPrices():
     conn.close()
 
     for metal in metals:
-        shit = data1.find(metal + '</a></td>')
+        temp1 = data1.find(metal + '</a></td>')
         key = '<td><p>'
         for x in range(3):
-            shit = data1.find('<td>',shit)
-	    shit += len(key)
-        output = data1[shit:shit+10]
+            temp1 = data1.find('<td>',temp1)
+	    temp1 += len(key)
+        output = data1[temp1:temp1+10]
         stopper = output.index('<')
         results.append(metal + ':' + output[:stopper].strip())
     results.append('For more visit: http://www.kitco.com/market/')
@@ -43,18 +43,18 @@ def PullWorldMetalPrices():
 
     for metal in metals:
         key = 'The World Spot Price'
-        shit = data1.find(key)
-	shit += len(key)
+        temp1 = data1.find(key)
+	temp1 += len(key)
 
-        shit = data1.find(metal + '</a></td>')
-        shit += len(metal + '</a></td>')
-        shit = data1.find(metal + '</a></td>', shit)
+        temp1 = data1.find(metal + '</a></td>')
+        temp1 += len(metal + '</a></td>')
+        temp1 = data1.find(metal + '</a></td>', temp1)
      
         key = 'align="center">'
         for x in range(3):
-            shit = data1.find(key,shit)
-            shit += len(key)
-        output = data1[shit:shit+10]
+            temp1 = data1.find(key,temp1)
+            temp1 += len(key)
+        output = data1[temp1:temp1+10]
         stopper = output.index('<')
         results.append(metal + ':' + output[:stopper].strip())
     results.append('For more visit: http://www.kitco.com/market/')
