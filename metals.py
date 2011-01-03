@@ -11,7 +11,7 @@ results = []
 def PullNYMetalPrices():
     global results
     results = []
-    metals = ['GOLD','SILVER','PLATINUM','PALLADIUM']
+    metals = ['GOLD','SILVER']
 
     conn = httplib.HTTPConnection("www.kitco.com")
     conn.request("GET", "/market/")
